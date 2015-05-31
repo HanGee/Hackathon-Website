@@ -2044,6 +2044,51 @@
 				border-bottom-color: rgba(255, 255, 255, 0);
 			}
 
+/* Event description*/
+
+	#event-desc {
+		position: relative;
+		color: #fff;
+		text-shadow: 0 0 0.5px rgba(255, 255, 255, 0.25);
+		text-align: center;
+		background: #35b88f url("images/event-desc.svg") bottom center no-repeat;
+		padding: 5em 0 5em 0;
+		margin: 9em 0 0 0;
+		background-size: 125% auto;
+	}
+
+		#event-desc .button {
+			color: #35b882;
+			text-shadow: 0 0 0.5px rgba(53, 184, 130, 0.25);
+		}
+
+		#event-desc header {
+			margin: 0 0 2em 0;
+		}
+
+			#event-desc header h2 {
+				font-weight: 400;
+				font-size: 1.75em;
+				letter-spacing: 8px;
+			}
+
+		#event-desc p {
+			margin: 0;
+		}
+
+		#event-desc footer {
+			margin: 2em 0 0 0;
+		}
+
+		#event-desc a {
+			color: inherit;
+			border-bottom-color: rgba(255, 255, 255, 0.5);
+		}
+
+			#event-desc a:hover {
+				border-bottom-color: rgba(255, 255, 255, 0);
+			}
+
 /* Footer */
 
 	#footer {
