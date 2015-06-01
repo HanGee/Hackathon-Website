@@ -1938,6 +1938,7 @@
 		margin: 0;
 		padding: 14em 0 14em 0;
 		cursor: default;
+		margin-bottom: 5em;
 	}
 
 		#header header {
@@ -1971,7 +1972,7 @@
 
 		#header footer {
 			position: absolute;
-			bottom: 9em;
+			bottom: 2em;
 			margin: 0;
 			width: 100%;
 		}
@@ -2513,7 +2514,7 @@
 				}
 
 					#header header h1 {
-						font-size: 1.75em;
+						font-size: 3em;
 						letter-spacing: 6px;
 					}
 

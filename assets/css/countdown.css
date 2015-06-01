@@ -1,5 +1,6 @@
 #countdown-timer {
-  display: block;
-  position: relative;
-  background: transparent;
+	display: block;
+	position: relative;
+	background: transparent;
+	width: 100%;
 }
