@@ -7,100 +7,144 @@ var ringer = {
     },
     'HOURS': {
       s: 3600000, // mseconds per hour,
-      max: 24
+      max: 24,
+      cur: 0
     },
     'MINUTES': {
       s: 60000, // mseconds per minute
-      max: 60
+      max: 60,
+      cur: 0
     },
     'SECONDS': {
       s: 1000,
-      max: 60
+      max: 60,
+      cur: 0
     },
     'MICROSEC': {
       s: 10,
-      max: 100
+      max: 100,
+      cur: 0
     }
    },
   r_count: 5,
   r_spacing: 10, // px
-  r_size: 100, // px
+  r_size: 90, // px
   r_thickness: 2, // px
   update_interval: 16, // ms
+  degreeUnit: Math.PI / 180,
+  perLine: 1,
+  horizontalMargin: 0,
+  verticalMargin: 0,
     
   init: function(){
    
     $r = ringer;
     $r.cvs = document.getElementById('countdown-timer'); 
-    
+    $r.cvs = $('#countdown-timer');
+
+	// Figure out how many ringer per line and determine size of canvas
+	var width = $r.cvs.width();
+	var height = $r.cvs.height();
+	var unitSize = $r.r_size + $r.r_thickness;
+	if (unitSize * 2 + $r.r_spacing <= width) {
+		$r.perLine = Math.floor(($r.cvs.width() - $r.r_spacing) / (unitSize + $r.r_spacing));
+		unitSize += $r.r_spacing;
+		width = unitSize * $r.perLine + $r.r_spacing;
+		height = unitSize * Math.ceil($r.r_count / $r.perLine) + $r.r_spacing;
+		$r.horizontalMargin = ($r.cvs.width() - width) * .5;
+	}
+	console.log($r.cvs.width(), width, $r.r_spacing);
+
     $r.size = { 
-      w: ($r.r_size + $r.r_thickness) * $r.r_count + ($r.r_spacing*($r.r_count-1)), 
-      h: ($r.r_size + $r.r_thickness) 
+		width: $r.cvs.width(),
+		height: height
     };
 
-    $r.cvs.setAttribute('width',$r.size.w);           
-    $r.cvs.setAttribute('height',$r.size.h);
-    $r.ctx = $r.cvs.getContext('2d');
-//    $(document.body).append($r.cvs);
-    $r.cvs = $($r.cvs);    
+	$r.cvs.attr({
+		width: $r.cvs.width(),
+		height: height
+	});
+
+    $r.cvs.css({
+		width: $r.size.w + "px",
+		height: $r.size.h + "px"
+	});
+
+	$r.verticalMargin = ($r.cvs.height() - height) * .5;
+
+    $r.ctx = $r.cvs[0].getContext('2d');
     $r.ctx.textAlign = 'center';
     $r.actual_size = $r.r_size + $r.r_thickness;
     $r.countdown_to_time = new Date($r.countdown_to).getTime();
-    $r.cvs.css({ width: $r.size.w+"px", height: $r.size.h+"px" });
     $r.go();
   },
   ctx: null,
   go: function(){
-    var idx=0;
+    var idx = 0;
     
     $r.time = (new Date().getTime()) - $r.countdown_to_time;
     
-    
-    for(var r_key in $r.rings) $r.unit(idx++,r_key,$r.rings[r_key]);      
+    for(var r_key in $r.rings) {
+		$r.unit(idx++, r_key, $r.rings[r_key]);      
+	}
     
     setTimeout($r.go,$r.update_interval);
   },
   unit: function(idx,label,ring) {
-    var x,y, value, ring_secs = ring.s;
+    var value, ring_secs = ring.s;
     value = parseFloat($r.time/ring_secs);
-    $r.time-=Math.round(parseInt(value)) * ring_secs;
+    $r.time -= Math.round(parseInt(value)) * ring_secs;
     value = Math.abs(value);
-    
-    x = ($r.r_size*.5 + $r.r_thickness*.5);
-    x +=+(idx*($r.r_size+$r.r_spacing+$r.r_thickness));
-    y = $r.r_size*.5;
-    y += $r.r_thickness*.5;
 
+	// Nothing's changed
+	if (value == ring.cur)
+		return;
+
+	ring.cur = value;
+
+	var unitSize = $r.actual_size + $r.r_spacing;
+
+	var x, y;
+	x = $r.horizontalMargin + $r.r_spacing + (idx % $r.perLine) * unitSize;
+	y = $r.verticalMargin + $r.r_spacing + unitSize * Math.floor(idx / $r.perLine);
+
+	// Center
+	var r = ($r.r_size + $r.r_thickness) * .5;
+    var cx = x + r;
+    var cy = y + r;
     
     // calculate arc end angle
-    var degrees = 360-(value / ring.max) * 360.0;
-    var endAngle = degrees * (Math.PI / 180);
+    var degrees = 360 - (value / ring.max) * 360.0;
+    var endAngle = degrees * $r.degreeUnit;
     
     $r.ctx.save();
 
-    $r.ctx.translate(x,y);
-    $r.ctx.clearRect($r.actual_size*-0.5,$r.actual_size*-0.5,$r.actual_size,$r.actual_size);
+	// Clear
+    $r.ctx.moveTo(x,y);
+    $r.ctx.clearRect(x, y, $r.actual_size + 1,$r.actual_size + 1);
+
+    $r.ctx.translate(cx,cy);
 
     // first circle
+    var circleR = $r.r_size * .5;
     $r.ctx.strokeStyle = "rgba(128,128,128,0.4)";
     $r.ctx.beginPath();
-    $r.ctx.arc(0,0,$r.r_size/2,0,2 * Math.PI, 2);
-    $r.ctx.lineWidth =$r.r_thickness;
+    $r.ctx.arc(0,0,circleR,0,2 * Math.PI, 2);
+    $r.ctx.lineWidth = $r.r_thickness;
     $r.ctx.stroke();
    
     // second circle
     $r.ctx.strokeStyle = "rgba(250, 253, 50, 1)";
     $r.ctx.beginPath();
-    $r.ctx.arc(0,0,$r.r_size/2,0,endAngle, 1);
-    $r.ctx.lineWidth =$r.r_thickness;
+    $r.ctx.arc(0,0,circleR,0,endAngle, 1);
+    $r.ctx.lineWidth = $r.r_thickness;
     $r.ctx.stroke();
-    
+
     // label
     $r.ctx.fillStyle = "#ffffff";
    
     $r.ctx.font = '12px Helvetica';
     $r.ctx.fillText(label, 0, 23);
-    $r.ctx.fillText(label, 0, 23);   
     
     $r.ctx.font = 'bold 40px Helvetica';
     $r.ctx.fillText(Math.floor(value), 0, 10);
