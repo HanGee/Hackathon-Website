@@ -27,7 +27,7 @@ var ringer = {
     }
    },
   r_count: 5,
-  r_spacing: 5, // px
+  r_spacing: 2, // px
   r_size: 90, // px
   r_thickness: 2, // px
   update_interval: 16, // ms
@@ -45,7 +45,7 @@ var ringer = {
     $r.cvs = $('#countdown-timer');
 
 	$r.r_size = Math.floor(($r.cvs.width() - $r.r_spacing) / $r.r_count) - $r.r_spacing - $r.r_thickness * 2;
-	$r.labelSize = Math.floor($r.r_size / 6);
+	$r.labelSize = Math.floor($r.r_size / 7);
 	$r.dispSize = Math.floor($r.r_size / 2);
 
 	// Figure out how many ringer per line and determine size of canvas

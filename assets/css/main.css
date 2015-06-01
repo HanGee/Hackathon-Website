@@ -2329,6 +2329,16 @@
 			background-repeat: repeat;
 		}
 
+		#header header h1, #header header {
+			text-shadow: 0px 0 3px rgba(0,0,0,0.8);
+		}
+
+		#header header p {
+			font-size: 1.5em;
+			padding-bottom: .8em;
+			text-shadow: 0px 0 3px rgba(0,0,0,0.8);
+		}
+
 		/* Box */
 
 			.box {
@@ -2511,6 +2521,9 @@
 
 			#header {
 				padding: 6em 0 6em 0;
+				background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNgMAYAADYANKqWpHYAAAAASUVORK5CYII=); 
+				background-repeat: repeat;
+				margin-bottom: 0;
 			}
 
 				#header header {
@@ -2519,7 +2532,7 @@
 				}
 
 					#header header h1 {
-						font-size: 2em;
+						font-size: 2.5em;
 						letter-spacing: 6px;
 					}
 
