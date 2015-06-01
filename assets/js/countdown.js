@@ -101,11 +101,15 @@ var ringer = {
     $r.time -= Math.round(parseInt(value)) * ring_secs;
     value = Math.abs(value);
 
-	// Nothing's changed
-	if (value == ring.cur)
+    // calculate arc end angle
+    var deg = (value / ring.max) * 360.0;
+	if (Math.abs(deg - ring.cur) < 0.5)
 		return;
 
-	ring.cur = value;
+	ring.cur = deg;
+
+    var degrees = 360 - deg;
+    var endAngle = degrees * $r.degreeUnit;
 
 	var unitSize = $r.actual_size + $r.r_spacing;
 
@@ -117,10 +121,6 @@ var ringer = {
 	var r = ($r.r_size + $r.r_thickness) * .5;
     var cx = x + r;
     var cy = y + r;
-    
-    // calculate arc end angle
-    var degrees = 360 - (value / ring.max) * 360.0;
-    var endAngle = degrees * $r.degreeUnit;
     
     $r.ctx.save();
 
