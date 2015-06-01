@@ -2066,7 +2066,7 @@
 		color: #fff;
 		text-shadow: 0 0 0.5px rgba(255, 255, 255, 0.25);
 		text-align: center;
-		background: #35b88f url("images/event-desc.svg") bottom center no-repeat;
+		background: #35b88f url("images/banner.svg") bottom center no-repeat;
 		padding: 5em 0 5em 0;
 		margin: 9em 0 0 0;
 		background-size: 125% auto;
@@ -2101,6 +2101,51 @@
 		}
 
 			#event-desc a:hover {
+				border-bottom-color: rgba(255, 255, 255, 0);
+			}
+/* Contact */
+
+	#contact {
+		position: relative;
+		color: #fff;
+		text-shadow: 0 0 0.5px rgba(255, 255, 255, 0.25);
+		text-align: center;
+		background: #15585f url("images/banner.svg") bottom center no-repeat;
+		/*background: #35b88f url("images/banner.svg") bottom center no-repeat;*/
+		padding: 5em 0 5em 0;
+		margin: 9em 0 0 0;
+		background-size: 125% auto;
+	}
+
+		#contact .button {
+			color: #35b882;
+			text-shadow: 0 0 0.5px rgba(53, 184, 130, 0.25);
+		}
+
+		#contact header {
+			margin: 0 0 2em 0;
+		}
+
+			#contact header h2 {
+				font-weight: 400;
+				font-size: 1.75em;
+				letter-spacing: 8px;
+			}
+
+		#contact p {
+			margin: 0;
+		}
+
+		#contact footer {
+			margin: 2em 0 0 0;
+		}
+
+		#contact a {
+			color: inherit;
+			border-bottom-color: rgba(255, 255, 255, 0.5);
+		}
+
+			#contact a:hover {
 				border-bottom-color: rgba(255, 255, 255, 0);
 			}
 
@@ -2586,9 +2631,14 @@
 						letter-spacing: 6px;
 					}
 
-		/* Event description*/
+		/* Event description */
 
 			#event-desc {
+				margin: 4.5em 0 0 0;
+			}
+
+		/* Contact */
+			#contact {
 				margin: 4.5em 0 0 0;
 			}
 
