@@ -10,24 +10,24 @@ var ringer = {
       max: 24,
       cur: 0
     },
-    'MINUTES': {
+    'MINS': {
       s: 60000, // mseconds per minute
       max: 60,
       cur: 0
     },
-    'SECONDS': {
+    'SECS': {
       s: 1000,
       max: 60,
       cur: 0
     },
-    'MICROSEC': {
+    'MSEC': {
       s: 10,
       max: 100,
       cur: 0
     }
    },
   r_count: 5,
-  r_spacing: 10, // px
+  r_spacing: 5, // px
   r_size: 90, // px
   r_thickness: 2, // px
   update_interval: 16, // ms
@@ -35,12 +35,18 @@ var ringer = {
   perLine: 1,
   horizontalMargin: 0,
   verticalMargin: 0,
+  labelSize: 12,
+  dispSize: 40,
     
   init: function(){
    
     $r = ringer;
     $r.cvs = document.getElementById('countdown-timer'); 
     $r.cvs = $('#countdown-timer');
+
+	$r.r_size = Math.floor(($r.cvs.width() - $r.r_spacing) / $r.r_count) - $r.r_spacing - $r.r_thickness * 2;
+	$r.labelSize = Math.floor($r.r_size / 6);
+	$r.dispSize = Math.floor($r.r_size / 2);
 
 	// Figure out how many ringer per line and determine size of canvas
 	var width = $r.cvs.width();
@@ -53,7 +59,6 @@ var ringer = {
 		height = unitSize * Math.ceil($r.r_count / $r.perLine) + $r.r_spacing;
 		$r.horizontalMargin = ($r.cvs.width() - width) * .5;
 	}
-	console.log($r.cvs.width(), width, $r.r_spacing);
 
     $r.size = { 
 		width: $r.cvs.width(),
@@ -143,11 +148,11 @@ var ringer = {
     // label
     $r.ctx.fillStyle = "#ffffff";
    
-    $r.ctx.font = '12px Helvetica';
-    $r.ctx.fillText(label, 0, 23);
+    $r.ctx.font = $r.labelSize + 'px Helvetica';
+    $r.ctx.fillText(label, 0, $r.labelSize * 2);
     
-    $r.ctx.font = 'bold 40px Helvetica';
-    $r.ctx.fillText(Math.floor(value), 0, 10);
+    $r.ctx.font = 'bold ' + $r.dispSize + 'px Helvetica';
+    $r.ctx.fillText(Math.floor(value), 0, $r.dispSize / 4);
     
     $r.ctx.restore();
   }
