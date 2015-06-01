@@ -1948,7 +1948,7 @@
 
 			#header header h1 {
 				font-weight: 600;
-				font-size: 2em;
+				/*font-size: 2em;*/
 				letter-spacing: 10px;
 			}
 
@@ -2514,7 +2514,7 @@
 				}
 
 					#header header h1 {
-						font-size: 3em;
+						font-size: 2em;
 						letter-spacing: 6px;
 					}
 
