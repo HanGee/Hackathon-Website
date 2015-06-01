@@ -1928,6 +1928,20 @@
 			display: none;
 		}
 
+/* Mentor */
+.mentor {
+	display: block;
+}
+
+.mentor img {
+	max-width: 100%;
+	height: auto;
+
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    border-radius: 50%;
+}
+
 /* Header */
 
 	#header {
