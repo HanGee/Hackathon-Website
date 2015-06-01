@@ -2537,7 +2537,7 @@
 					}
 
 				#header footer {
-					bottom: 4.5em;
+					bottom: 2em;
 					padding: 0 2em 0 2em;
 				}
 
@@ -2571,6 +2571,12 @@
 						font-size: 1.5em;
 						letter-spacing: 6px;
 					}
+
+		/* Event description*/
+
+			#event-desc {
+				margin: 4.5em 0 0 0;
+			}
 
 		/* Footer */
 
