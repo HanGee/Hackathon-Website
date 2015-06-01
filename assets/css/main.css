@@ -1948,7 +1948,7 @@
 
 			#header header h1 {
 				font-weight: 600;
-				/*font-size: 2em;*/
+				font-size: 2em;
 				letter-spacing: 10px;
 			}
 
@@ -2302,7 +2302,7 @@
 		/* Basic */
 
 			body {
-				background-color: #203936;
+				background-color: #000;
 				background-image: url("../../images/bg.jpg");
 				background-repeat: repeat, no-repeat;
 				background-size: auto, 100% auto;
@@ -2323,6 +2323,11 @@
 				margin: 0.25em 0 0 0;
 				padding: 0 0 0.5em 0;
 			}
+
+		#header {
+			background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNgMAYAADYANKqWpHYAAAAASUVORK5CYII=); 
+			background-repeat: repeat;
+		}
 
 		/* Box */
 
