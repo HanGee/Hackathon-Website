@@ -3,8 +3,9 @@
     "title": "Hackathon Taiwan"
   },
   "header": {
-    "desc": "Biggest Hackathon Event In Taiwan",
+    "desc": "Coolest Hackathon In Taiwan",
     "register": "Register Now!",
-    "agenda": "Agenda"
+    "agenda": "Agenda",
+	"button": "Why Hackathon is not a competition"
   }
 }
