@@ -647,6 +647,7 @@
 			<script>
 				i18n.init({
 					fallbackLng: false,
+					fallbackOnNull: false,
 					customLoad: function(lng, ns, options, loadComplete) {
 						$.ajax('locales/' + lng + '/' + ns + '.json', { crossDomain: true, dataType: 'json' })
 							.done(function(data) {
