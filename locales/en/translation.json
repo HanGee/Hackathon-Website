@@ -7,5 +7,8 @@
     "register": "Register Now!",
     "agenda": "Agenda",
 	"button": "Why Hackathon is not a competition"
+  },
+  "about": {
+    "desc": "Hackathon is a newly created noun, a fusion of two words: hack and marathon. It has been a repulsive joke in the software industry, to describe an activity in which programmers or engineers create a new prototype, or code to solve a specific problem, marathon style. Since the past few years, however, the actual content of hackathons hasn't exclusively been software development, but also in the fields of design and hardware, with active participation of Maker communities. People gather together to solve various problems in life, with sharing in mind."
   }
 }
