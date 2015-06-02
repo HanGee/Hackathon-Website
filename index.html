@@ -6,7 +6,7 @@
 -->
 <html>
 	<head>
-		<title>Hackathon Taiwan: 黑客松台灣</title>
+		<title data-i18n="head.title">Hackathon Taiwan: 黑客松台灣</title>
 		<meta http-equiv="Content-Language" charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
     		<meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -643,6 +643,20 @@
 			<script src="assets/js/particle.js"></script>
 			<script src="assets/js/countdown.js"></script>
 			<script src="assets/js/hackathonmap.js"></script>
+			<script src="https://cdnjs.cloudflare.com/ajax/libs/i18next/1.6.3/i18next-1.6.3.min.js"></script>
+			<script>
+				i18n.init({ fallbackLng: 'en', lng: 'en',
+					customLoad: function(lng, ns, options, loadComplete) {
+						$.ajax('locales/' + lng + '/' + ns + '.json', { crossDomain: true, dataType: 'json' })
+							.done(function(data) {
+								loadComplete(null, data);
+							});
+					}
+				}, function(t) {
+				  $('head').i18n();
+				  $('body').i18n();
+				});
+			</script>
 
 	</body>
 </html>
