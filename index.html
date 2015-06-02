@@ -646,7 +646,7 @@
 			<script src="https://cdnjs.cloudflare.com/ajax/libs/i18next/1.6.3/i18next-1.6.3.min.js"></script>
 			<script>
 				i18n.init({
-					fallbackLng: 'en',
+					fallbackLng: false,
 					customLoad: function(lng, ns, options, loadComplete) {
 						$.ajax('locales/' + lng + '/' + ns + '.json', { crossDomain: true, dataType: 'json' })
 							.done(function(data) {
