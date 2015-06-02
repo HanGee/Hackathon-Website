@@ -13,5 +13,35 @@
     "desc1": "To put it simply, hackathon is:",
     "desc2": "\"An act of continuous technology creation and innovation\"",
     "button": "The true face of Hackathons"
+  },
+  "events": {
+    "1st": {
+      "name": "Hackathon Taiwan 1st",
+      "desc": "From the HanGee Smartphone Project, we came to understand that to make the goal come true, we should not endeavour alone. We, however, also found that most of the people don't join community events, or let alone create things with computer technologies. From this, the Hackathon Taiwan project was born, to attract more people to learn and create together, and to cultivate this DIY-themed community."
+    },
+    "2nd": {
+      "name": "Hackathon Taiwan 2nd",
+      "desc": "To let more people try joining hackathons, we added Qt/QML workshops, mainly for those who didn't dare participating to give it a shot. Aside from learning new skills and techniques, people try to create new things with friends from scratch."
+    },
+    "3rd": {
+      "name": "Hackathon Taiwan 3rd",
+      "desc": "As most of the programmers are quite familiar with Web-related technologies, we decided to add some Web-themed workshops to our hackathon. We wanted those developers who had never joined any hackathon understand that one need not to be skillful to join."
+    },
+    "4th": {
+      "name": "Hackathon Taiwan 4th",
+      "desc": "In the past, the domestic hackathons focused solely on software development. We introduced Arduino workshop to make some change. For anyone that's alien to hardware hacking, the course would provide knowledge on wiring and basic hardware assembly. Quite interesting as it is, many creative physical devices joined the demo prototypes ever since."
+    },
+    "5th": {
+      "name": "Hackathon Taiwan 5th",
+      "desc": "We introduced the workshops for basic 3-D modelling and operation of 3-D printers in this event, mainly to familiarise our participants with Maker elements. Printing services were also provided at the venue. The ARM mbed workshop was made available for the first time, with promotion of cutting-edge IoT technology in mind. Demo prototypes grew much more mature ever."
+    },
+    "6th": {
+      "name": "Hackathon Taiwan 6th",
+      "desc": "The event has reached a milestone of a total 500 participants scale. To enable artists and designers to join the hackathons and actively participate, we introduced artistic elements in our workshops, with a special instructor on topics of computer technology related courses. Startup kiosks were first introduced in this event."
+    },
+    "7th": {
+      "name": "Hackathon Taiwan 7th",
+      "desc": "Inspired by the talking robot made by IBM team last event, the Interactive Design workshop had been added with an instructor to provide the participants with more possibilities other than pure computer programs, to develop interactive applications of either software and hardware. We also had more startups joining us, setting up kiosks and providing talent-seeking services."
+    }
   }
 }
