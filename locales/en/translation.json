@@ -1,5 +1,10 @@
 {
   "head": {
     "title": "Hackathon Taiwan"
+  },
+  "header": {
+    "desc": "Biggest Hackathon Event In Taiwan",
+    "register": "Register Now!",
+    "agenda": "Agenda"
   }
 }
