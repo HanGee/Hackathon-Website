@@ -52,6 +52,15 @@
     "desc4": "In our Core event, we are issueing Choice Award, Technical Award, Visual Design Award, and Presentation Award, mainly to encourage a more polished result from our participants. Different professionals of the awards are invited to assess the prototypes and presentations. Aside from techniques, presentation became also a topic of award from its nature as a solid skill.",
     "desc5": "Our Core event doesn't grade our participants or categorise them into different positions. It doesn't matter whether you produced a solid prototype, or awarded; as long as you enjoy the process of Hackathon, made new friends, learned to solve problems with or without friend, or did things yourself, you'll understand what Hackathon really is.",
     "button": "I would like to join"
-
+  },
+  "map": {
+    "title": "Where can I join?",
+    "desc": "In fact, aside from the Core events of Hackathon Taiwan, various other flavours of Hackathons are emerging on the island, and we are cheerful to witness the growth of this hacking spirit in our nation. As they are organised by different parties, the factors and lengths may vary. Please refer to the information of individual events:",
+    "note": "Are you organising a Hackathon, or would you like to tell us what we've been missing?",
+    "button": "Register a Hackathon"
+  },
+  "sponsor": {
+    "title": "Partners and Sponsorships",
+    "desc": "Cultivating the events would require many resources.<br />For the DIY-culture and innovative power domestically.<br />We appreciate the efforts of the partners accompanying us:"
   }
 }
