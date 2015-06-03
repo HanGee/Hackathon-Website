@@ -649,10 +649,14 @@
 
 				i18n.init({
 					useCookie: false,
-					fallbackLng: 'en',
+					fallbackLng: 'en-US',
 					lng: userLang[0],
+					lngWhitelist: [ 'en-US', 'zh-TW' ],
 					customLoad: function(lng, ns, options, loadComplete) {
 						$.ajax('locales/' + lng + '/' + ns + '.json', { crossDomain: true, dataType: 'json' })
+							.fail(function() {
+								loadComplete(null, '{}');
+							})
 							.done(function(data) {
 								loadComplete(null, data);
 							});
