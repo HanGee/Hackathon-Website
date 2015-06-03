@@ -645,10 +645,12 @@
 			<script src="assets/js/hackathonmap.js"></script>
 			<script src="https://cdnjs.cloudflare.com/ajax/libs/i18next/1.6.3/i18next-1.6.3.min.js"></script>
 			<script>
+				var userLang = navigator.languages || navigator.userLanguage;
+
 				i18n.init({
+					useCookie: false,
 					fallbackLng: 'en',
-//					fallbackOnNull: false,
-					lngWhitelist: [ 'zh-TW', 'en' ],
+					lng: userLang[0],
 					customLoad: function(lng, ns, options, loadComplete) {
 						$.ajax('locales/' + lng + '/' + ns + '.json', { crossDomain: true, dataType: 'json' })
 							.done(function(data) {
