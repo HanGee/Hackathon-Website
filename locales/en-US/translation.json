@@ -6,9 +6,11 @@
     "desc": "Coolest Hackathon In Taiwan",
     "register": "Register Now!",
     "agenda": "Agenda",
+    "tonext": "to the next core event",
 	"button": "Why Hackathon is not a competition"
   },
   "about": {
+    "title": "Hackathon is an Activity of Creation",
     "desc": "Hackathon is a newly created noun, a fusion of two words: hack and marathon. It has been a repulsive joke in the software industry, to describe an activity in which programmers or engineers create a new prototype, or code to solve a specific problem, marathon style. Since the past few years, however, the actual content of hackathons hasn't exclusively been software development, but also in the fields of design and hardware, with active participation of Maker communities. People gather together to solve various problems in life, with sharing in mind.",
     "desc1": "To put it simply, hackathon is:",
     "desc2": "\"An act of continuous technology creation and innovation\"",
@@ -61,6 +63,11 @@
   },
   "sponsor": {
     "title": "Partners and Sponsorships",
-    "desc": "Cultivating the events would require many resources.<br />For the DIY-culture and innovative power domestically.<br />We appreciate the efforts of the partners accompanying us:"
+    "desc": "Cultivating the events would require many resources.<br />For the DIY-culture and innovative power domestically.<br />We appreciate the efforts of the partners accompanying us:",
+    "wanted": {
+      "title": "Like to stand together with our talented ones in Taiwan?",
+      "desc": "We recklessly founded this test range of talents<br />Now we need everyone's assistance on equipments, food, technologies, or budget, to further build this ecosystem of innovation.<br />Together, we are sure to bring forth top-tier teams and talents here.<br />Together, we shall witness the age of the future.",
+      "button": "Be sure to contact us!"
+    }
   }
 }
