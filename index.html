@@ -659,6 +659,7 @@
 			<script>
 				var userLang = navigator.languages || navigator.userLanguage;
 
+				var t = null;
 				i18n.init({
 					useCookie: false,
 					fallbackLng: 'en-US',
@@ -673,9 +674,10 @@
 								loadComplete(null, data);
 							});
 					}
-				}, function(t) {
-				  $('head').i18n();
-				  $('body *').i18n();
+				}, function(_t) {
+					$('head').i18n();
+					$('body *').i18n();
+					t = _t;
 				});
 			</script>
 

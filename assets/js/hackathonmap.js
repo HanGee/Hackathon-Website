@@ -24,7 +24,7 @@ $(function() {
 
 			$link.append($name);
 
-			$register.addClass('label label-default').text('線上報名');
+			$register.addClass('label label-default').text(t('map.register'));
 			$registerLink
 				.attr('href', event['gsx$registration'].$t)
 				.append($register);
