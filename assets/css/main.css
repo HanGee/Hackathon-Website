@@ -2557,6 +2557,10 @@
 							width: 100%;
 						}
 
+						.box.style1.right .image img {
+							right: !important;
+						}
+
 					.box.style1 .inner {
 						margin: 0 !important;
 						padding: 2em 1.25em 2em 1.25em !important;
